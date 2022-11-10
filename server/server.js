@@ -23,7 +23,6 @@ mongoose
 
 app.use("/", category);
 
-
 app.listen(process.env.PORT, (req, res) => {
   console.log(`Server is runging  on port ${process.env.PORT}`);
 });
