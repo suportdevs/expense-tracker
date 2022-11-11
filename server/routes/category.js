@@ -4,7 +4,6 @@ const { index } = require("../controller/CategoryController");
 // external imports
 const router = require("express").Router();
 
-router.route("categories")
-    .get("/", index);
+router.get("/", index);
 
 module.exports = router;
