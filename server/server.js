@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 
 // Internal imports
 const category = require("./routes/category");
+const transaction = require("./routes/transaction");
 
 // use middlewares
 app.use(express.json());
@@ -22,6 +23,8 @@ mongoose
   });
 
 app.use("/category", category);
+
+app.use("/transaction", transaction);
 
 app.listen(process.env.PORT, (req, res) => {
   console.log(`Server is runging  on port ${process.env.PORT}`);
