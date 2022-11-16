@@ -3,11 +3,19 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const bodyParser = require("body-parser");
+var cors = require("cors");
 
 // Internal imports
 const category = require("./routes/category");
 const transaction = require("./routes/transaction");
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+app.use(cors());
 // use middlewares
 app.use(express.json());
 dotenv.config();
