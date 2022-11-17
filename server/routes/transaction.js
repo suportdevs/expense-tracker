@@ -14,6 +14,6 @@ router.post("/", create);
 
 router.delete("/:id", remove);
 
-router.get("/labels", getLabels);
+router.get("/label", getLabels);
 
 module.exports = router;

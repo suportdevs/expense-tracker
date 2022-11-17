@@ -3,10 +3,10 @@ const Transaction = require("../models/Transaction");
 
 async function index(req, res) {
   try {
-    const data = await new Transaction.find();
+    const data = await Transaction.find();
     res.status(200).json(data);
   } catch (err) {
-    res.status(200).json({ message: "Server side error!" });
+    res.status(200).json({ message: "Server side error!" + err });
   }
 }
 
@@ -34,7 +34,7 @@ async function remove(req, res) {
 async function getLabels(req, res) {
   try {
     Transaction.find({})
-      .populate("category")
+      .populate("category", "name color _id")
       .exec((err, data) => {
         if (err) {
           res.status(400).json({ message: `Error ${err}` });
