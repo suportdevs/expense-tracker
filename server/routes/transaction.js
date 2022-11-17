@@ -5,6 +5,7 @@ const {
   index,
   create,
   remove,
+  getLabels,
 } = require("../controller/TransactionController");
 
 router.get("/", index);
@@ -12,5 +13,7 @@ router.get("/", index);
 router.post("/", create);
 
 router.delete("/:id", remove);
+
+router.get("/labels", getLabels);
 
 module.exports = router;

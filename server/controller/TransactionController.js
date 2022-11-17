@@ -31,8 +31,25 @@ async function remove(req, res) {
   }
 }
 
+async function getLabels(req, res) {
+  try {
+    Transaction.find({})
+      .populate("category")
+      .exec((err, data) => {
+        if (err) {
+          res.status(400).json({ message: `Error ${err}` });
+        } else {
+          res.status(200).json(data);
+        }
+      });
+  } catch (err) {
+    res.status(500).json({ message: "server side error!" });
+  }
+}
+
 module.exports = {
   index,
   create,
   remove,
+  getLabels,
 };
