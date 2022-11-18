@@ -16,7 +16,7 @@ async function create(req, res) {
     await data.save();
     res.status(200).json({ message: "Record created successfull." });
   } catch (err) {
-    res.status(400).json({ message: "Server side error!" });
+    res.status(400).json({ message: "Server side error!" + err });
   }
 }
 
