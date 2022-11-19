@@ -11,7 +11,7 @@ const transactionSchema = mongoose.Schema(
       // required: true,
     },
     amount: {
-      type: String,
+      type: Number,
     },
     category: {
       type: mongoose.Types.ObjectId,
